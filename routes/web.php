@@ -35,7 +35,7 @@ Route::middleware('auth')->group(function () {
 // web.php ou routes/web.php
 
     Route::get('/accueil', [AdminController::class, 'index']);
-    // Route::get('/admin/user-list', 'AdminController@userList')->name('admin.userList');
+    // Route::get('/ad', 'AdminController@userList')->name('admin.userList');
     // Route::get('/admin/delete-user/{id}', 'AdminController@deleteUser')->name('admin.deleteUser');
     // Ajoutez d'autres routes administratives si nécessaire
 

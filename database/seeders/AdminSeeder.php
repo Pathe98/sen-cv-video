@@ -2,32 +2,33 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Storage; // Assurez-vous d'importer la classe Storage
 use App\Models\User;
+use Illuminate\Support\Facades\Storage;
 
 class AdminSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
-    public function run(): void
+    public function run()
     {
-        // Utilisez putFile pour stocker le fichier dans le stockage
-        $imagePath = 'public/images/moi.jpeg';
-        $image = Storage::putFile('images', $imagePath, 'public');
+        // // Chemin de l'image existante
+        $imagePath = 'images/1704831720.jpeg';
+
+        // // Utilisez la méthode basename pour obtenir le nom du fichier
+        // $filename = basename($imagePath);
+
+        // // Utilisez Storage::copy pour copier l'image vers le stockage
+        // Storage::copy($imagePath, 'public/' . $filename);
 
         User::create([
-            'nom' => 'Ba',
-            'prenom' => 'Demba',
-            'adresse' => 'Diourbel',
+            'nom' => 'BA',
+            'prenom' => 'Demba Pathe',
             'email' => 'demba@gmail.com',
-            'password' => Hash::make('Passer123'),
+            'adresse' => 'Pikine',
             'user_type' => 'admin',
             'role' => 'admin',
-            'image' => $image, // Pas besoin de guillemets autour de $image ici
+            'password' => Hash::make('Passer123'),
+            'image' => $imagePath,
         ]);
     }
 }

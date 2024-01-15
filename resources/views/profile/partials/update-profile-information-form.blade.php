@@ -63,22 +63,24 @@
             </div>
         </div>
 
-        <!-- type d'utilisateurs -->
-        <div class="col-lg-6 mt-3 ms-4 ps-4">
-            <label for="user_type" class="form-label">Type d'utilisateur</label>
-            <select name="user_type" id="user_type" class="form-select" required>
-                <option value="Stagiaire" {{ old('user_type', $user->user_type) === 'Stagiaire' ? 'selected' : '' }}>Stagiaire</option>
-                <option value="Coach" {{ old('user_type', $user->user_type) === 'Coach' ? 'selected' : '' }}>Coach</option>
-                <option value="Membre RDL" {{ old('user_type', $user->user_type) === 'Membre RDL' ? 'selected' : '' }}>Membre RDL</option>
-            </select>
-        </div>
 
-        <!-- photo de profil
+        <div class="d-flex flex-direction-column justify-content-center align-items-center">
+            <!-- type d'utilisateurs -->
+            <div class="col-lg-4 mt-2 mx-4 px-4">
+                <label for="user_type" class="form-label">Type d'utilisateur</label>
+                <select name="user_type" id="user_type" class="form-select" required>
+                    <option value="Stagiaire" {{ old('user_type', $user->user_type) === 'Stagiaire' ? 'selected' : '' }}>Stagiaire</option>
+                    <option value="Coach" {{ old('user_type', $user->user_type) === 'Coach' ? 'selected' : '' }}>Coach</option>
+                    <option value="Membre RDL" {{ old('user_type', $user->user_type) === 'Membre RDL' ? 'selected' : '' }}>Membre RDL</option>
+                </select>
+            </div>
+
+            <!-- photo de profil -->
             <div class="mt-2">
                 <label for="image" class="form-label">Photo de profil</label>
                 <input type="file" name="image">
-            </div> -->
-
+            </div>
+        </div>
 
 
         <div class="flex items-center gap-4">
