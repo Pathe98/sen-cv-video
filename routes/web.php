@@ -22,8 +22,8 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->name('dashboard');
-// middleware(['auth', 'verified'])
+})->middleware(['auth', 'verified'])->name('dashboard');
+
 
 
 Route::middleware('auth')->group(function () {
@@ -34,12 +34,11 @@ Route::middleware('auth')->group(function () {
 
 // web.php ou routes/web.php
 
-Route::middleware(['auth', 'admin'])->group(function () {
-    Route::get('/admin', 'AdminController@index')->name('index');
-    Route::get('/admin/user-list', 'AdminController@userList')->name('admin.userList');
-    Route::get('/admin/delete-user/{id}', 'AdminController@deleteUser')->name('admin.deleteUser');
+    Route::get('/accueil', [AdminController::class, 'index']);
+    // Route::get('/admin/user-list', 'AdminController@userList')->name('admin.userList');
+    // Route::get('/admin/delete-user/{id}', 'AdminController@deleteUser')->name('admin.deleteUser');
     // Ajoutez d'autres routes administratives si nécessaire
-});
+
 
 
 
