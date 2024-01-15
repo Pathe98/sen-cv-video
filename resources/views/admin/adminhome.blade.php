@@ -14,17 +14,17 @@
 
 
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+    {{-- <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight"> --}}
             {{-- {{ __('dashboard') }} --}}
-        </h2>
-    </x-slot>
+        {{-- </h2>
+    </x-slot> --}}
 
     <div class="d-sm-flex align-items-center justify-content-around w-100 px-" style="height: 86vh; background-color:#fff">
         <div class="col-md-4 mx-auto mb-4 mb-sm-0 headline">
           <span class="text-secondary text-uppercase"></span>
-          <p class="display-6 font-weight-bold">Dites adieu aux  CV  traditionnels avec<span style="color: #F76300;"> notre plateforme de CV vidéo révolutionnaire.</span></p>
-          <a href="{{route('post.index')}}" class="btn px-5 text-white mt-3 mt-sm-0" style="border-radius: 30px; background-color: #F76300;" >Aller au fil d'actualité</a>
+          <p class="display-1 font-weight-bold">Welcome <span style="color: #F76300;">Admin</span> </p><br><br>
+          <a href="{{route('admin.admindashboard')}}" class="btn px-5 text-white mt-3 mt-sm-0" style="border-radius: 30px; background-color: #F76300;" >Dashboard</a>
         </div>
         
         <div class="col-md-6 ">

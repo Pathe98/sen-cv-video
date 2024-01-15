@@ -16,7 +16,7 @@
     </div> --}}
     
 
-<body class="h-screen overflow-hidden flex items-center justify-center" style="background: #edf2f7;">
+<body class="h-screen overflow-hidden flex items-center justify-center bg-gray-200">
     <div>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     
@@ -25,9 +25,10 @@
         class="fixed inset-0 z-20 transition-opacity bg-black opacity-50 lg:hidden"></div>
     
         <div :class="sidebarOpen ? 'translate-x-0 ease-out' : '-translate-x-full ease-in'" 
-        class="fixed inset-y-0 left-0 z-30 w-64 overflow-y-auto transition duration-300 transform bg-gray-600 lg:translate-x-0 lg:static lg:inset-0">
+        style="background-color:rgb(255, 255, 255);margin-top:32px;margin-left:20px;"
+        class="fixed inset-y-0 left-0 z-30 w-64 overflow-y-auto transition duration-300 transform lg:translate-x-0 lg:static lg:inset-0">
             <nav class="mt-10"> 
-                <a class="flex items-center px-6 py-2 mt-4 text-white fw-600" href=""
+                <a class="flex items-center px-6 py-2 mt-4  fw-600" style="font-size:18px" href="{{ route('admin.admindashboard')}}"
                 onmouseover="this.style.background='rgb(219, 225, 234)';this.style.color='#FF0000';" onmouseout="this.style.background='';this.style.color='';">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-speedometer2" viewBox="0 0 16 16">
                         <path d="M8 4a.5.5 0 0 1 .5.5V6a.5.5 0 0 1-1 0V4.5A.5.5 0 0 1 8 4M3.732 5.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707M2 10a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 10m9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5m.754-4.246a.39.39 0 0 0-.527-.02L7.547 9.31a.91.91 0 1 0 1.302 1.258l3.434-4.297a.39.39 0 0 0-.029-.518z"/>
@@ -37,7 +38,7 @@
                     <span class="mx-3">Dashboard</span>
                 </a>
     
-                <a class="flex items-center px-6 py-2 mt-4 text-white" href=""
+                <a class="flex items-center px-6 py-2 mt-4 fw-800" href="{{ route('list')}}" style="font-size:18px"
                 onmouseover="this.style.background='rgb(219, 225, 234)';this.style.color='#FF0000';" onmouseout="this.style.background='';this.style.color='';">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-people" viewBox="0 0 16 16">
                         <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4"/>
@@ -50,11 +51,11 @@
         </div>
         <div class="flex flex-col flex-1">
             
-            <!-- <main class="flex-1   bg-gray-200">
+            <main class="flex-1   bg-gray-200">
                 <div class="container px-6 py-8 mx-auto">
-                    <h3 class="text-3xl font-medium text-gray-700">Dashboard</h3>
+                    {{-- <h3 class="text-3xl font-medium text-gray-700">Dashboard</h3> --}}
     
-                    <div class="mt-4">
+                    <div class="">
                         <div class="flex flex-wrap -mx-6">
                             <div class="w-full px-6 sm:w-full xl:w-1/2">
                                 <div class="flex items-center px-5 py-6 bg-white rounded-md shadow-sm">
@@ -65,7 +66,7 @@
                                     </div>
     
                                     <div class="mx-5">
-                                        <h4 class="text-2xl font-semibold text-gray-700">{{ $TotalUsers }}</h4>
+                                        <h4 class="text-2xl font-semibold text-gray-700">{{ $totalUsers }}</h4>
                                         <div class="text-gray-500">Nombre Utilisateurs</div>
                                     </div>
                                 </div>
@@ -79,7 +80,7 @@
                                     </div>
     
                                     <div class="mx-5">
-                                        <h4 class="text-2xl font-semibold text-gray-700">{{ $TotalPosts }}</h4>
+                                        <h4 class="text-2xl font-semibold text-gray-700">{{ $totalPosts }}</h4>
                                         <div class="text-gray-500">Nombre Publications</div>
                                     </div>
                                 </div>
@@ -153,8 +154,8 @@
                                                 </td>
 
                                                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                    @if($user->image)
-                                                        <img src="{{ asset('storage/' . $user->image) }}" alt="Photo de profil" style="width:60px; height:60px; border-radius:50%">
+                                                    @if($list->image)
+                                                        <img src="{{ asset('storage/' . $list->image) }}" alt="Photo de profil" style="width:60px; height:60px; border-radius:50%">
                                                     @else
                                                     <p>Aucune photo de profil disponible.</p>
                                                     @endif
@@ -167,11 +168,11 @@
                         </div>
                     </div>
                 </div>
-            </main> -->
+            </main>
         </div>
     </div>
 </div>
 </body>
 </html>
 
-<!-- </x-app-layout> -->
+</x-app-layout> 
