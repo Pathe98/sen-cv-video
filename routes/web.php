@@ -4,6 +4,8 @@ use App\Http\Controllers\Post_Controller;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
+use App\Models\post;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,8 +24,8 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->name('dashboard');
-// middleware(['auth', 'verified'])
+})->middleware(['auth', 'verified'])->name('dashboard');
+
 
 
 Route::middleware('auth')->group(function () {
@@ -34,12 +36,15 @@ Route::middleware('auth')->group(function () {
 
 // web.php ou routes/web.php
 
-Route::middleware(['auth', 'admin'])->group(function () {
-    Route::get('/admin', 'AdminController@index')->name('index');
-    Route::get('/admin/user-list', 'AdminController@userList')->name('admin.userList');
-    Route::get('/admin/delete-user/{id}', 'AdminController@deleteUser')->name('admin.deleteUser');
+    Route::get('/accueil', [AdminController::class, 'index'])->name('accueil');
+    Route::get('/admindashboard', [AdminController::class, 'admin'])->name('admin.admindashboard');
+    Route::get('/admindashboard/list', [AdminController::class, 'list'])->name('list');
+    Route::get('/admindashboard/list/delete/{id}', [AdminController::class, 'deleteUser']);
+
+    // Route::get('/admin/user-list', 'AdminController@userList')->name('admin.userList');
+    // Route::get('/admin/delete-user/{id}', 'AdminController@deleteUser')->name('admin.deleteUser');
     // Ajoutez d'autres routes administratives si nécessaire
-});
+
 
 
 
