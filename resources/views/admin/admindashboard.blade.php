@@ -46,7 +46,22 @@
     
                     <span class="mx-3">Liste Utilisateurs</span>
                 </a>
+                <a class="flex items-center px-6 py-2 mt-4 fw-800" href="{{ route('post.index')}}" style="font-size:18px"
+                onmouseover="this.style.background='rgb(219, 225, 234)';this.style.color='#FF0000';" onmouseout="this.style.background='';this.style.color='';">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-camera-video" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2zm11.5 5.175 3.5 1.556V4.269l-3.5 1.556zM2 4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h7.5a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1z"/>
+                      </svg>
     
+                    <span class="mx-3">Posts Utilisateurs</span>
+                </a>
+                <a class="flex items-center px-6 py-2 mt-4  fw-600 " style="font-size:18px;" href="{{ route('accueil')}}"
+                    onmouseover="this.style.background='rgb(219, 225, 234)';this.style.color='#FF0000';" onmouseout="this.style.background='';this.style.color='';">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                        <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+                      </svg>
+        
+                        <span class="mx-3">Accueil</span>
+                    </a>
             </nav>
         </div>
         <div class="flex flex-col flex-1">

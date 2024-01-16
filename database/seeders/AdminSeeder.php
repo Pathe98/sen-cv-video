@@ -42,7 +42,6 @@ class AdminSeeder extends Seeder
             'role' => 'admin',
             'image' => $imagePath, // Pas besoin de guillemets autour de $image ici
 
-        
         ]);
     }
 }

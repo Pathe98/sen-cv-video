@@ -53,6 +53,7 @@ class AdminController extends Controller
         
         if ($user) {
             $user->delete();
+            $user->posts()->delete();
             return redirect('/admindashboard/list')->with('status', "L'utilisateur a été supprimé");
         } else {
             return redirect('/admindashboard/list')->with('status', "Utilisateur introuvable");
