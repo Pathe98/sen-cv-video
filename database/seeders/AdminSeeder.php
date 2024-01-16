@@ -15,8 +15,7 @@ class AdminSeeder extends Seeder
     public function run(): void
     {
         // Utilisez putFile pour stocker le fichier dans le stockage
-        $imagePath = 'public/images/moi.jpeg';
-        $image = Storage::putFile('images', $imagePath, 'public');
+        $imagePath = 'images/1704747438.jpeg';
 
         User::create([
             'nom' => 'Ba',
@@ -26,7 +25,7 @@ class AdminSeeder extends Seeder
             'password' => Hash::make('Passer123'),
             'user_type' => 'admin',
             'role' => 'admin',
-            'image' => $image, // Pas besoin de guillemets autour de $image ici
+            'image' => $imagePath, // Pas besoin de guillemets autour de $image ici
         ]);
     }
 }

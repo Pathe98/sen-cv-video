@@ -41,7 +41,7 @@
         <div class="flex flex-col flex-1">
             
             <main class="flex-1 bg-gray-200">
-                <div class="container px-6 mt-2 mx-auto" ">
+                <div class="container px-6 mt-2 mx-auto">
                     <div class="py-6">
                         <div class="max-w-7xl mx-auto">
                             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">

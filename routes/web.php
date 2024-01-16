@@ -17,35 +17,35 @@ use App\Models\post;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+// Route Accueil
 Route::get('/', function () {
     return view('welcome');
 });
 
+// Route aprés connexion
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
-
+// Route profile
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-// web.php ou routes/web.php
-
-    Route::get('/accueil', [AdminController::class, 'index']);
-    // Route::get('/admin/user-list', 'AdminController@userList')->name('admin.userList');
-    // Route::get('/admin/delete-user/{id}', 'AdminController@deleteUser')->name('admin.deleteUser');
+// Route redirection et Admin
+    Route::get('/accueil', [AdminController::class, 'admin'])->name('admin.admindashboard');
+    Route::get('//admindashboard/list', 'AdminController@list')->name('list');
+    Route::get('/admindashboard/list/delete/{{ $user->id }}', 'AdminController@deleteUser($id)')->name('admin.deleteUser');
     // Ajoutez d'autres routes administratives si nécessaire
 
 
 
 
 
-
+// Route Posts
 Route::get('posts',[Post_Controller::class, 'index'])->name('post.index');
 Route::post('posts',[Post_Controller::class, 'store'])->name('post.store');
 
