@@ -96,8 +96,7 @@
                                 </g>
                             </svg>
                         </button>
+                        @endforeach
                     </div>
-                    @endforeach
-                </div>
             </div>
 @endsection

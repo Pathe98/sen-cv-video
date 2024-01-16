@@ -14,11 +14,11 @@
 
 
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+    {{-- <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight"> --}}
             {{-- {{ __('dashboard') }} --}}
-        </h2>
-    </x-slot>
+        {{-- </h2>
+    </x-slot> --}}
 
     <div class="d-sm-flex align-items-center justify-content-around w-100 px-" style="height: 86vh; background-color:#fff">
         <div class="col-md-4 mx-auto mb-4 mb-sm-0 headline">

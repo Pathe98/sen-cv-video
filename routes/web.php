@@ -4,6 +4,8 @@ use App\Http\Controllers\Post_Controller;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
+use App\Models\post;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +37,7 @@ Route::middleware('auth')->group(function () {
 // web.php ou routes/web.php
 
     Route::get('/accueil', [AdminController::class, 'index']);
-    // Route::get('/ad', 'AdminController@userList')->name('admin.userList');
+    // Route::get('/admin/user-list', 'AdminController@userList')->name('admin.userList');
     // Route::get('/admin/delete-user/{id}', 'AdminController@deleteUser')->name('admin.deleteUser');
     // Ajoutez d'autres routes administratives si nécessaire
 

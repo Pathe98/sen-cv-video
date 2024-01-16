@@ -32,30 +32,30 @@ class AdminController extends Controller
             }
         }
     }
-//     public function admindashboard()
-//     {
-//         $totalUsers = User::count(); // Utilisez une minuscule pour la variable ($totalUsers au lieu de $TotalUsers)
-//         $totalPosts = Post::count(); // Utilisez une minuscule pour la variable ($totalPosts au lieu de $TotalPosts)
-//         $list = User::all();
+    public function admin()
+    {
+        $totalUsers = User::count(); // Utilisez une minuscule pour la variable ($totalUsers au lieu de $TotalUsers)
+        $totalPosts = Post::count(); // Utilisez une minuscule pour la variable ($totalPosts au lieu de $TotalPosts)
+        $list = User::all();
         
-//         return view('/',compact('totalUsers', 'totalPosts', 'list'));
-//     }
+        return view('admin.admindashboard',compact('totalUsers', 'totalPosts', 'list'));
+    }
 
-//     public function listUser()
-//     {
-//         $users = User::all();
-//         return view('admin/listUser', compact('users'));
-//     }
+    public function list()
+    {
+        $users = User::all();
+        return view('admin.listeUser', compact('users'));
+    }
 
-//     public function deleteUser($id)
-//     {
-//         $user = User::find($id);
+    public function deleteUser($id)
+    {
+        $user = User::find($id);
         
-//         if ($user) {
-//             $user->delete();
-//             return redirect('/admin/list')->with('status', "L'utilisateur a été supprimé");
-//         } else {
-//             return redirect('/admin/list')->with('status', "Utilisateur introuvable");
-//         }
-//     }
+        if ($user) {
+            $user->delete();
+            return redirect('/admindashboard/list')->with('status', "L'utilisateur a été supprimé");
+        } else {
+            return redirect('/admindashboard/list')->with('status', "Utilisateur introuvable");
+        }
+    }
 }
