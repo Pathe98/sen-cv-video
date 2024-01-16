@@ -1,7 +1,7 @@
 @extends('components.navbar')
 
 @section('content')
-<div class="d-sm-flex align-items-center justify-content-around w-100 px-" style="height: 100vh;">
+<div class="d-sm-flex align-items-center justify-content-around w-100 bg-white" style="height: 100vh;">
     <div class="col-md-4 mx-auto mb-4 mb-sm-0 headline">
       <span class="text-secondary text-uppercase"></span>
       <p class="display-6 my-4 font-weight-bold">Dites adieu aux  CV  traditionnels avec<span style="color: #F76300;"> notre plateforme de CV vidéo révolutionnaire.</span></p>
