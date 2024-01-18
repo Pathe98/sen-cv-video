@@ -7,8 +7,31 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- icônes réseaux sociaux -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <!-- <script src="{{ asset('js/share.js') }}"></script> -->
+    <!--  -->
+    <!--  -->
 
-    <title>Hello, world!</title>
+    <style>
+      /* #social-links > ul { list-style: none;}
+      #social-links > ul > li { float: left; margin-left: 1rem; font-size: 2rem; color: white;} */
+      /* #social-links ul li {
+        display: inline-block;
+      }
+      #social-links ul li a {
+        padding: 20px;
+        margin: 2px;
+        font-size: 30px;
+        color: rgb(46,41,114);
+        background-color: #ccc;
+      }
+      #social-links ul li a:hover{
+        background-color: rgb(46,41,114);
+        color: white;
+      } */
+    </style>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light d-flex" style="background-color:">
