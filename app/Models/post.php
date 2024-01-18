@@ -14,4 +14,11 @@ class post extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+    public function likes(){
+        return $this->hasMany(Like::class);
+
+    }
+    public function isLikedByLoggedInUser(){
+        return $this->likes->where('user_id', auth()->user()->id)->isEmpty()? false: true;
+    }
 }
