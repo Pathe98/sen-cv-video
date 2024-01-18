@@ -87,7 +87,7 @@
        
       </nav>
 
-      <div  style="color: black;">
+      <div style="background-color: #eee">
         @yield('content')
       </div>
 

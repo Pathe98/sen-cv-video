@@ -3,6 +3,7 @@
 use App\Http\Controllers\Post_Controller;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CommentaireController;
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
 use App\Models\post;
@@ -36,8 +37,9 @@ Route::middleware('auth')->group(function () {
 });
 
 // Route redirection et Admin
-    Route::get('/accueil', [AdminController::class, 'admin'])->name('admin.admindashboard');
-    Route::get('//admindashboard/list', 'AdminController@list')->name('list');
+    Route::get('/accueil', [AdminController::class, 'index']);
+    Route::get('/admindashboard', [AdminController::class, 'admin'])->name('admin.admindashboard');
+    Route::get('/admindashboard/list', 'AdminController@list')->name('list');
     Route::get('/admindashboard/list/delete/{{ $user->id }}', 'AdminController@deleteUser($id)')->name('admin.deleteUser');
     // Ajoutez d'autres routes administratives si nécessaire
 
@@ -48,5 +50,8 @@ Route::middleware('auth')->group(function () {
 // Route Posts
 Route::get('posts',[Post_Controller::class, 'index'])->name('post.index');
 Route::post('posts',[Post_Controller::class, 'store'])->name('post.store');
+Route::get('post/details/{post}', [CommentaireController::class, 'show'])->name('post.details.show');
+Route::post('post/details/{post}/comment', [CommentaireController::class, 'commentaire'])->name('post.details.comment');
+Route::get('post/details/{commentaire}/delete', [CommentaireController::class, 'deleteComment'])->name('commentaire.delete');
 
 require __DIR__.'/auth.php';

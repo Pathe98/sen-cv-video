@@ -14,4 +14,8 @@ class post extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+    public function commentaire()
+    {
+        return $this->hasMany(Commentaire::class)->latest();
+    }
 }

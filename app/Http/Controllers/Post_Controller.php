@@ -20,7 +20,7 @@ class Post_Controller extends Controller
         $request->validate([
             'content'=>'required',
             'video'=>'nullable|mimes:mp4,ogv,webm,mp3|max:20000',
-        ]);
+          ]);
 
         $post=new Post();
         $post->content=$request->input('content');
